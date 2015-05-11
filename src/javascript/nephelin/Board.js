@@ -9,6 +9,7 @@ var Hexagon = require('./Hexagon');
 var mapgen = require('./MapGenerators');
 var HexagonAlgebra = require('./HexagonAlgebra');
 var CanvasHelper = require('./CanvasHelper');
+var menu = require('./menu');
 //TODO: getCanvas from SidePanel
 var Board;
 Board =  function Board(columnSize, hexagonSideSize, mapType) {
@@ -54,6 +55,14 @@ Board =  function Board(columnSize, hexagonSideSize, mapType) {
                 self.actions.selectHexagon(hex);
                 Hexagon.drawHexagon(ctx,hex);
                 console.log(self.map[coordinate]);
+
+
+                //Test Menu Funktionen
+                menu.changeMenuLabel("Hexagon", "mainmenu");
+                menu.addMenuItem("NewItem", "doSomething", "mainmenu");
+                //menu.removeMenuItem("NewItem");
+
+
             } else {
                 console.log("No hit!");
             }
